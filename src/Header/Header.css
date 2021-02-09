@@ -1,0 +1,10 @@
+.title {
+    text-align: center;
+    font-size: 50px;
+}
+
+.header {
+    background-color: lightblue;
+    height: var(--header-height);
+    box-shadow: var(--shadow);
+  }
