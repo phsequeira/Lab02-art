@@ -16,9 +16,11 @@ export default class App extends React.Component {
     }
   render() {
     const filteredImages = Images.filter((image) => {
-      if (!image.keyword) 
-      return true
-        return image.keyword === this.state.keyword
+      if (!this.state.keyword) return true;
+      
+      if (image.keyword === this.state.keyword) return true;
+
+      return false;
       });
     return (
       <>
@@ -41,7 +43,7 @@ export default class App extends React.Component {
             <option value='dragon'>Dragon</option>
           </select>
       </form>
-      <ImageList />
+      <ImageList filteredImages={filteredImages} />
       </>
     )
   }
